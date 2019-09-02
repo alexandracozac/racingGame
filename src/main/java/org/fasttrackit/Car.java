@@ -1,15 +1,9 @@
 package org.fasttrackit;
 
-public class Car {
+//inheritance (is-a relationship)
 
-    String name;
-    double mileage;
-    double maxSpeed;
-    String fuelType;
-    double fuelLevel;
-    double traveledDistance;
+public class Car extends AutoVehicle {
+
     int doorCount;
-    boolean running;
-    //has-a relationship (agregare)
-    Engine engine;
+
 }
