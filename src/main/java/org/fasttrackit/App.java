@@ -28,6 +28,8 @@ public class App
 
         System.out.println(car.engine.manufacturer);
 
+        car.accelerate(60, 1);  // car = VARIABILA !!!! nu clasa
+
         Car car2 = new Car();
         car2.name = "Golf";
         car2.fuelLevel = 50;
