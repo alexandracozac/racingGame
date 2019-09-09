@@ -22,5 +22,9 @@ public class HybridCar extends Vehicle {
     protected HybridCar clone() throws CloneNotSupportedException {
         return new HybridCar(); // numele la fel => co-variant return type
     }
+
+    public void fly() {
+        System.out.println("Yeeey! Flying!!!!");
+    }
 }
 

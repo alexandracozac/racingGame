@@ -64,12 +64,18 @@ public class App
 //        System.out.println("Total count in car2: " + car2.totalCount);
 //        System.out.println("Total count in Car class: " + Car.totalCount);
 
-        HybridCar hybridCar = new HybridCar();
+        Vehicle hybridCar = new HybridCar();
+        //method implementation from object's class not from variable's class
+        //se schimba referinta dar ramane tot hybrid... nu il pun in cutia specifica hybrid ci in vechicle
         hybridCar.setName("cheater");
 
         hybridCar.accelerate(60,1);
+
         System.out.println("Fuel level: " + hybridCar.getFuelLevel());
         System.out.println("Traveled distance: " + hybridCar.getTraveledDistance());
+
+        //variable type decides what methods can be called
+        ( (HybridCar) hybridCar).fly(); //type casting - anunt ca vreau sa tratez obiectul ca si cum ar fi hybrid car
 
     }
 
