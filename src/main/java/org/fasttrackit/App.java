@@ -20,9 +20,11 @@ public class App
         car.setMaxSpeed(180);
         car.setFuelType("Gasoline");
 
+        System.out.println("Car object: " + car.toString()); //obiectul car(litere mici) ; reprezentare din clasa string, se poate si fara
+
         System.out.println(car.getName());
-        System.out.println(car.getTraveledDistance());
-        System.out.println(car.isRunning());
+        System.out.println(car.getTraveledDistance()); // overriding - metoda print
+        System.out.println(car.isRunning()); // isRunning for boolean !!!
 
         System.out.println(car.engine.manufacturer);
 
@@ -62,5 +64,14 @@ public class App
 //        System.out.println("Total count in car2: " + car2.totalCount);
 //        System.out.println("Total count in Car class: " + Car.totalCount);
 
+        HybridCar hybridCar = new HybridCar();
+        hybridCar.setName("cheater");
+
+        hybridCar.accelerate(60,1);
+        System.out.println("Fuel level: " + hybridCar.getFuelLevel());
+        System.out.println("Traveled distance: " + hybridCar.getTraveledDistance());
+
     }
+
+
 }

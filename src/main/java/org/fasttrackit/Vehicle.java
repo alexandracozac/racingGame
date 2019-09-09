@@ -17,13 +17,14 @@ public class Vehicle {
         totalCount ++;   //mai apare o masina
     }
 
-    public double accelerate(double speed) {  // * overloading - lista param sa aiba macar o diferenta
+    public double accelerate(double speed) {  // * overriding - lista param sa aiba macar o diferenta
         return accelerate(speed, 1);
     }
 
-    // supraincarcare overloading
+    // supraincarcare overriding
 
-    public double accelerate(double speed, double durationInHours) { //semnatura metodei ; * overloading - o diferenta macar intre param
+    public double accelerate(double speed, double durationInHours) { //semnatura metodei ; * overriding
+        // - o diferenta macar intre param
         System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h. ");
 
         double distance = speed * durationInHours;
@@ -111,5 +112,19 @@ public class Vehicle {
 
     public static int getTotalCount() {
         return totalCount;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", mileage=" + mileage +
+                ", maxSpeed=" + maxSpeed +
+                ", fuelType='" + fuelType + '\'' +
+                ", fuelLevel=" + fuelLevel +
+                ", traveledDistance=" + traveledDistance +
+                ", doorCount=" + doorCount +
+                ", running=" + running +
+                '}';
     }
 }
