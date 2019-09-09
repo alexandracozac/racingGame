@@ -17,7 +17,13 @@ public class Vehicle {
         totalCount ++;   //mai apare o masina
     }
 
-    public double accelerate(double speed, double durationInHours) { //semnatura metodei
+    public double accelerate(double speed) {  // * overloading - lista param sa aiba macar o diferenta
+        return accelerate(speed, 1);
+    }
+
+    // supraincarcare overloading
+
+    public double accelerate(double speed, double durationInHours) { //semnatura metodei ; * overloading - o diferenta macar intre param
         System.out.println(name + " is accelerating with " + speed + " km/h for " + durationInHours + " h. ");
 
         double distance = speed * durationInHours;
