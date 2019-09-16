@@ -8,6 +8,9 @@ public class App
 {
     public static void main( String[] args )
     {
+        Game game = new Game();
+        game.start();
+
         Engine engine = new Engine();
         engine.manufacturer = "Renault";
         engine.capacity = 1600;
@@ -64,18 +67,18 @@ public class App
 //        System.out.println("Total count in car2: " + car2.totalCount);
 //        System.out.println("Total count in Car class: " + Car.totalCount);
 
-        Vehicle hybridCar = new HybridCar();
-        //method implementation from object's class not from variable's class
-        //se schimba referinta dar ramane tot hybrid... nu il pun in cutia specifica hybrid ci in vechicle
-        hybridCar.setName("cheater");
-
-        hybridCar.accelerate(60,1);
-
-        System.out.println("Fuel level: " + hybridCar.getFuelLevel());
-        System.out.println("Traveled distance: " + hybridCar.getTraveledDistance());
-
-        //variable type decides what methods can be called
-        ( (HybridCar) hybridCar).fly(); //type casting - anunt ca vreau sa tratez obiectul ca si cum ar fi hybrid car
+//        Vehicle hybridCar = new HybridCar();
+//        //method implementation from object's class not from variable's class
+//        //se schimba referinta dar ramane tot hybrid... nu il pun in cutia specifica hybrid ci in vechicle
+//        hybridCar.setName("cheater");
+//
+//        hybridCar.accelerate(60,1);
+//
+//        System.out.println("Fuel level: " + hybridCar.getFuelLevel());
+//        System.out.println("Traveled distance: " + hybridCar.getTraveledDistance());
+//
+//        //variable type decides what methods can be called
+//        ( (HybridCar) hybridCar).fly(); //type casting - anunt ca vreau sa tratez obiectul ca si cum ar fi hybrid car
 
     }
 
