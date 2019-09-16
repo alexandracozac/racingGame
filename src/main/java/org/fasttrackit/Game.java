@@ -1,17 +1,41 @@
 package org.fasttrackit;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Game {
 
     private Vehicle competitor1;
     private Vehicle competitor2;
     private Track[] tracks = new Track[3]; // nr circuite, trebuie specificata lungimea; LUCRU CU SIRURI
-
+    private List<Vehicle> competitors = new ArrayList<Vehicle>(); //sau doar <>
 
 
     public void start() {
         initializeTracks();
         displayTracks();
+        initializeCompetitors();
 
+
+    }
+
+    private void initializeCompetitors() {
+        int competitorCount = 2;
+
+        for (int i = 0; i < competitorCount; i++) {
+            Vehicle competitor = new Vehicle();
+            competitor.setName("Competitor " + i);
+            competitor.setMaxSpeed(300);
+            competitor.setMileage(ThreadLocalRandom.current().nextDouble(6, 12));
+            competitor.setFuelLevel(80);
+
+            System.out.println(competitor);
+
+            competitors.add(competitor);
+
+            //competitors.size(); - metoda la lista
+        }
 
     }
 
