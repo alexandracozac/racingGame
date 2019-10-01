@@ -14,15 +14,35 @@ public class Game {
     private List<Vehicle> competitors = new ArrayList<Vehicle>(); //sau doar <>
 
 
-    public void start() {
+    public void start() throws Exception {
         initializeTracks();
         displayTracks();
         initializeCompetitors();
 
+        boolean winnerNotKnown = true;
+        int competitorsWithoutFuel = 0;
 
+        while(winnerNotKnown && competitorsWithoutFuel < competitors.size()) {
+
+            for (Vehicle vehicle : competitors) {
+                double speed = getAccelerationSpeedFromUser();
+                vehicle.accelerate(speed,1);
+
+                if(selectedTrack.getLength() <= vehicle.getTraveledDistance()) {
+                    winnerNotKnown = false;
+                    System.out.println("The winner is: " + vehicle.getName());
+                    break;
+                }
+
+                if (vehicle.getFuelLevel() <= 0) {
+                    competitorsWithoutFuel ++;
+                }
+            }
+
+        }
     }
 
-    private void initializeCompetitors() {
+    private void initializeCompetitors() throws Exception {
         int competitorCount = getCompetitorCountFromUser();
 
         System.out.println("Today's competitors are: ");
@@ -43,16 +63,16 @@ public class Game {
 
     }
 
-    private int getCompetitorCountFromUser() {
+    private int getCompetitorCountFromUser() throws Exception { //throws != throw
         System.out.println("Please enter number of players.");
         Scanner scanner = new Scanner(System.in);
         try {
             return scanner.nextInt();             //citire si returnare jucatori
         } catch (InputMismatchException e) {     //e variabila folosita pt exceptii
 
-            throw new RuntimeException("You have entered an invalid number.");
+            throw new Exception ("You have entered an invalid number.");
 
-        } finally {           //optional
+        } finally {           //finally optional
             System.out.println("Finally block is always executed.");
         }
     }
