@@ -7,10 +7,19 @@ package org.fasttrackit;
 public class App 
 {
     public static void main( String[] args ) throws Exception {
-        Game game = new Game();
-        game.start();
+       // Game game = new Game();
+       // game.start();
 
-        Engine engine = new Engine();
+        String a = "test";
+        String b = "test";
+
+        String c = new String("test");
+
+        System.out.println(a == b);
+        System.out.println(a == c);
+        System.out.println(a.equals(c));
+
+       /* Engine engine = new Engine();
         engine.manufacturer = "Renault";
         engine.capacity = 1600;
 
@@ -78,6 +87,8 @@ public class App
 //
 //        //variable type decides what methods can be called
 //        ( (HybridCar) hybridCar).fly(); //type casting - anunt ca vreau sa tratez obiectul ca si cum ar fi hybrid car
+
+        */
 
     }
 
